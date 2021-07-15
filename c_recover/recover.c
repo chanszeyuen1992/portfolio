@@ -2,16 +2,20 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+//Set a constant block value
 #define BLOCK 512
 
 int main(int argc, char *argv[])
 {
+
+    //Exit the prog when there are not 2 argument count.
     if (argc != 2)
     {
         printf("Usage: ./recover image\n");
         return 1;
     }
     
+    //Check the input file whether empty or not.
     char *inputName = argv[1];
     FILE *inputFile = fopen(inputName, "r");
     if (inputFile == NULL)
